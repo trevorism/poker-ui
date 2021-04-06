@@ -1,11 +1,14 @@
-## Poker-ui
+# Poker-ui
 
-Download gradle or use the gradle wrapper (gradlew, gradlew.bat)
+## Prerequsites
+JDK 8-15 supported. Download and set your JAVA_HOME environment variable.
 
-# To build 
+Download `gradle` or use the gradle wrapper (`gradlew`, `gradlew.bat`)
+
+## To build 
 
 `gradle clean build`
 
-# To run
+## To run
 
 `gradle run`
