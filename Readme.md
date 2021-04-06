@@ -1,11 +1,11 @@
-##Poker-ui
+## Poker-ui
 
 Download gradle or use the gradle wrapper (gradlew, gradlew.bat)
 
-#To build 
+# To build 
 
 `gradle clean build`
 
-#To run
+# To run
 
 `gradle run`
