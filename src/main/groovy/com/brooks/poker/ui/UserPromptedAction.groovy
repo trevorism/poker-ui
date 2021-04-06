@@ -11,7 +11,7 @@ import com.brooks.poker.ui.input.UserInput
 class UserPromptedAction implements PlayerAction{
 
 	@Override
-	public BettingOutcome getBettingOutcome(GameState gameState, Player player) {
+	BettingOutcome getBettingOutcome(GameState gameState, Player player) {
 		printGameState(gameState)
 		printPlayer(player)
 

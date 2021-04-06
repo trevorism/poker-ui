@@ -31,7 +31,7 @@ class PrintGameState extends GameStateHandlerAdaptor {
 
 	private void handleBetState(GameState gameState) {
 		chipStatus = [:]
-		gameState.table.allPlayers.each {
+		gameState.table.getSortedActivePlayers().each {
 			chipStatus.put(it.name, it.getChipCount())
 		}
 	}
@@ -40,10 +40,13 @@ class PrintGameState extends GameStateHandlerAdaptor {
 	void handleEndHandState(GameState gameState) {
 		println "*************** Hand Results *********************"
 		gameState.table.allPlayers.each {
+			if(gameState.table.isInactive(it))
+				return
 			if(it.hand.handValue.type != HandValue.HandValueType.NULL_VALUE)
 				println "$it :: $it.hand.handValue"
+
 		}
-		gameState.table.allPlayers.each {
+		gameState.table.getSortedActivePlayers().each {
 			if(chipStatus.get(it.name) < it.getChipCount()){
 				println "Winner : ${it.name} ($it.chipCount)"
 			}
