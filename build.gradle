@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'application'
 
 repositories {
     mavenCentral()
@@ -8,10 +9,15 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:2.5.8'
-
-
+    implementation 'org.codehaus.groovy:groovy-all:3.0.7'
     implementation 'com.trevorism:poker-bots:0.5.0'
     testImplementation "junit:junit:4.13.1"
 }
 
+application {
+    mainClass = 'com.brooks.poker.ui.PlayPoker'
+}
+
+run{
+    standardInput = System.in
+}
